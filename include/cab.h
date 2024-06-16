@@ -8,9 +8,9 @@ using namespace std;
 class Cab {
 public:
     int id;
-    pair<int, int> location;
+    pair<double, double> location;
 
-    Cab(int id, pair<int, int> location);
+    Cab(int id, pair<double, double> location);
 };
 
 #endif // CAB_H

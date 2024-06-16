@@ -10,7 +10,7 @@ using namespace std;
 class CabAllocator {
 private:
     vector<Cab>& cabs;
-    static double calculate_distance(pair<int, int> location1, pair<int, int> location2);
+    static double calculate_distance(pair<double, double> location1, pair<double, double> location2);
 
 public:
     CabAllocator(vector<Cab>& cabs);

@@ -8,12 +8,12 @@ using namespace std;
 
 class RealTimeLocationData {
 private:
-    unordered_map<int, pair<int, int>> cab_locations;
+    unordered_map<int, pair<double, double>> cab_locations;
     vector<Cab>* cabs_reference;
 
 public:
     void set_cabs_reference(vector<Cab>& cabs);
-    void update_cab_location(int cab_id, pair<int, int> new_location);
+    void update_cab_location(int cab_id, pair<double, double> new_location);
 };
 
 #endif // REAL_TIME_LOCATION_DATA_H

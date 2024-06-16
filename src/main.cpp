@@ -15,8 +15,8 @@
 using namespace std;
 
 int main() {
-    vector<Cab> cabs = {Cab(1, {10, 10}), Cab(2, {15, 15}), Cab(3, {20, 20})};
-    vector<Trip> trips = {Trip(101, {12, 12})};
+    vector<Cab> cabs = {Cab(1, {1.0, 3.5}), Cab(2, {14.99, 15.0}), Cab(3, {100.0, 0.0})};
+    vector<Trip> trips = {Trip(101, {12.0, 12.0})};
 
     CabAllocator cab_allocator(cabs);
     EmployeeCabSearch employee_cab_search(cabs);
@@ -33,7 +33,7 @@ int main() {
     real_time_location_data.set_cabs_reference(cabs);
 
     // Simulate real-time data update
-    real_time_location_data.update_cab_location(1, {11, 11});
+    real_time_location_data.update_cab_location(1, {15.0, 15.0});
 
     // 1. Authentication
     string username, password;
@@ -79,7 +79,7 @@ int main() {
             cout << "Trip " << trip.id << ": Allocate Cab " << best_cab.id << endl;
         }
 
-        pair<int, int> employee_location = {14, 14};
+        pair<double, double> employee_location = {99.0, 1.0};
         vector<Cab> nearby_cabs = employee_cab_search.suggest_nearby_cabs(employee_location);
         cout << "Employee at (" << employee_location.first << ", " << employee_location.second << "): Nearby Cabs ";
         for (auto& cab : nearby_cabs) {
@@ -88,7 +88,7 @@ int main() {
         cout << endl;
 
         // Real-Time Location Data Integration
-        real_time_location_data.update_cab_location(2, {16, 16});
+        real_time_location_data.update_cab_location(2, {16.0, 16.0});
 
         // Refresh suggestions with updated location data
         nearby_cabs = employee_cab_search.suggest_nearby_cabs(employee_location);

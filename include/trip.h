@@ -8,9 +8,9 @@ using namespace std;
 class Trip {
 public:
     int id;
-    pair<int, int> start_location;
+    pair<double, double> start_location;
 
-    Trip(int id, pair<int, int> start_location);
+    Trip(int id, pair<double, double> start_location);
 };
 
 #endif // TRIP_H

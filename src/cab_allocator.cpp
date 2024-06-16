@@ -2,7 +2,7 @@
 
 CabAllocator::CabAllocator(vector<Cab>& cabs) : cabs(cabs) {}
 
-double CabAllocator::calculate_distance(pair<int, int> location1, pair<int, int> location2) {
+double CabAllocator::calculate_distance(pair<double, double> location1, pair<double, double> location2) {
     return sqrt(pow(location1.first - location2.first, 2) + pow(location1.second - location2.second, 2));
 }
 
